@@ -1,0 +1,3 @@
+C:/Users/troev/2022-polytech-troev/03_cpp/intro/build/CMakeFiles/hello_men.dir
+C:/Users/troev/2022-polytech-troev/03_cpp/intro/build/CMakeFiles/edit_cache.dir
+C:/Users/troev/2022-polytech-troev/03_cpp/intro/build/CMakeFiles/rebuild_cache.dir
