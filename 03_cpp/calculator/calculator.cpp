@@ -5,46 +5,48 @@ int main()
 {
     char o;
     float n1, n2, n12;
+    bool fl;
+    fl = true;
 
-    cout << "Enter the operator (+, -, *, /, ^): ";
-    cin >> o;
+    while(fl = true) {
+        cout << "Enter the operator's sign: +, -, *, /, ^,: ";
+        cin >> o;
 
-    cout << "Enter the operands: ";
-    cin >> n1 >> n2; 
+        cout << "Enter the operands: n1, n2: ";
+        cin >> n1 >> n2; 
 
-    n12 = n1;
+        n12 = n1;
 
-    switch(o) {
+        switch(o) {
 
-        case '+':
-            cout << n1 << " + " << n2 << " = " << n1 + n2;
-            break;
+            case '+':
+                cout << n1 << " + " << n2 << " = " << n1 + n2 << endl;
+                break;
 
-        case '-':
-            cout << n1 << " - " << n2 << " = " << n1 - n2;
-            break;
+            case '-':
+                cout << n1 << " - " << n2 << " = " << n1 - n2 << endl;
+                break;
 
-        case '*':
-            cout << n1 << " * " << n2 << " = " << n1 * n2;
-            break;
+            case '*':
+                cout << n1 << " * " << n2 << " = " << n1 * n2 << endl;
+                break;
 
-        case '/':
-            cout << n1 << " / " << n2 << " = " << n1 / n2;
-            break;
+            case '/':
+                cout << n1 << " / " << n2 << " = " << n1 / n2 << endl;
+                break;
 
-        case '^':
-            for (int i = 1; i < n2; i++) {
-                n12 = n12 * n1;
+            case '^':
+                for (int i = 1; i < n2; i++) {
+                    n12 = n12 * n1;
+                }
+                cout << n1 << " ^ " << n2 << " = " << n12 << endl;
+                break;
+            
+            default: 
+                cout << "tu sho durak chto li? normalno napishi, ponyal?" << endl;
+                break;
             }
-            cout << n1 << " ^ " << n2 << " = " << n12;
-            break;
-        
-        default: 
-            // если это другие знаки которые не являются знаками операторов
-            cout << "tu sho durak chto li? normalno napishi, ponyal?";
-            break;
-    }
 
-    return 0;
+    }
 
 }
