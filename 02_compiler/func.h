@@ -1,2 +1,2 @@
-void print();
+void print(); 
 
