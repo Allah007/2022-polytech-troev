@@ -51,20 +51,24 @@ int main(){
 
     if (amount == -1){
 
-        return 1; // прога странно себя ведет когда элемента нет в массиве
+        cout << "Element is not present in the array" << endl;
+
+    }
+    else {
+
+        cout << "The amount of number " << x << " in the array is " << amount << " times" << endl;
+
+        cout << "All matching indexes: " << endl;
+
+        for (int i = 0; i < amount; i++){
+
+            cout << result[i] << endl;
+
+        }
 
     }
 
-    cout << "The amount of number " << x << " in the array is " << amount << " times" << endl;
 
-    cout << "All matching indexes: " << endl;
-
-    for (int i = 0; i < amount; i++){
-
-        cout << result[i] << endl;
-
-    }
-
-return 0;
+    return 0;
 
 }
