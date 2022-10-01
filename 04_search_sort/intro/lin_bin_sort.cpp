@@ -14,7 +14,7 @@ int main(){
 
     char sort;
 
-    int ArrayLen = sizeof(arr)/sizeof(int);
+    int ArrayLen = sizeof(arr)/sizeof(arr[0]);
 
     cout << "B or L?" << endl;
 
