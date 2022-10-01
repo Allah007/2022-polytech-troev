@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int search(int arr[], int n, int x, int result[]){
+int linear_search(int arr[], int n, int x, int result[]){
 
     int s = 0;
 
@@ -17,7 +17,18 @@ int search(int arr[], int n, int x, int result[]){
 
     }
 
-    return s;
+    if (s == 0){
+
+        cout << "Element is not present in the array" << endl;
+
+        return -1;
+
+    }
+    else {
+
+        return s;
+
+    }
 
 }
 
@@ -36,7 +47,13 @@ int main(){
 
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    int amount = search(arr, n, x, result);
+    int amount = linear_search(arr, n, x, result);
+
+    if (amount == -1){
+
+        return 1; // прога странно себя ведет когда элемента нет в массиве
+
+    }
 
     cout << "The amount of number " << x << " in the array is " << amount << " times" << endl;
 
