@@ -28,7 +28,7 @@ int main(){
 
                 if (arr[i] == 120){
 
-                    cout << "120 has been found by a Linear search method at the index of " << i << endl;
+                    cout << "120 has been found by a Linear search method at the index " << i << endl;
 
                     break;
 
@@ -48,7 +48,7 @@ int main(){
 
                 if (arr[mid] == 120){
 
-                    cout << "120 has been found by a Binary search method at the index of " << mid << endl;
+                    cout << "120 has been found by a Binary search method at the index " << mid << endl;
 
                     break;
 
