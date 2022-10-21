@@ -130,7 +130,7 @@ int main(){
 
         auto n = e[i];
 
-        int arr1[n], arr2[n];
+        auto arr1[n], arr2[n];
 
         fill_array_random(arr1, n, 0, 10000);
 
