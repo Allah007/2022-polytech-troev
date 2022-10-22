@@ -14,7 +14,7 @@ void show_meminfo(){
 
     std::ifstream in("/proc/meminfo", std::ios_base::in);
 
-    if(in.is_open()) {
+    if(in.is_open()){
 
         in >> parameter >> total >> unit;
 
@@ -32,7 +32,7 @@ void show_meminfo(){
 
     float percent = (total - avail) / static_cast<float>(total) * 100;
 
-    short bars_count = round(percent/10);
+    int bars_count = round(percent/10);
 
     for (int i = 0; i != bars_count; ++i)
 
