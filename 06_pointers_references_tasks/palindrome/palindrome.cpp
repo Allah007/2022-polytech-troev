@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string.h>
-#include <cassert
+#include <cassert>
 
 bool ispalindrome(char man[]){
 
