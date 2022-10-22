@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <cassert>
 
 bool ispalindrome(char man[]){
 
@@ -9,7 +10,7 @@ bool ispalindrome(char man[]){
 
     for (int i = 0; i < n; i++){
 
-        if (man[i] == man[n-i]){
+        if (man[i] == man[n-1-i]){
 
             fl = fl * 1;
 
@@ -46,12 +47,14 @@ int main(){
 
     char man[100];
 
-    std::cout << "Enter a word/phrase" << std::endl;
-
-    std::cin.getline(man, 100);
- 
-    std::cout << "The word is a palindrome -" << ispalindrome(man) << std::endl;
-
+    assert(ispalindrome("tenet") == true);
+    
+    assert(ispalindrome("") == false);
+    
+    assert(ispalindrome("hello world") == false);
+    
+    assert(ispalindrome(nullptr) == false);
+    
     return 0;
 
 }
