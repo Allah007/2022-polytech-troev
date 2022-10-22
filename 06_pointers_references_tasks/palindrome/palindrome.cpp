@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <cassert
 
 bool ispalindrome(char man[]){
 
@@ -46,12 +47,14 @@ int main(){
 
     char man[100];
 
-    std::cout << "Enter a word/phrase" << std::endl;
-
-    std::cin.getline(man, 100);
- 
-    std::cout << "The word is a palindrome -" << ispalindrome(man) << std::endl;
-
+    assert(ispalindrome("tenet") == true);
+    
+    assert(ispalindrome("") == false);
+    
+    assert(ispalindrome("hello world") == false);
+    
+    assert(ispalindrome(nullptr) == false);
+    
     return 0;
 
 }
