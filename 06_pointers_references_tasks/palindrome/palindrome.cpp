@@ -9,7 +9,7 @@ bool ispalindrome(char man[]){
 
     for (int i = 0; i < n; i++){
 
-        if (man[i] == man[n-i]){
+        if (man[i] == man[n-1-i]){
 
             fl = fl * 1;
 
