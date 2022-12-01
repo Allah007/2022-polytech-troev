@@ -3,95 +3,74 @@
 #include <cstdlib>
 #include <cstring>
 
-unsigned int length(const char *str){
+using namespace std;
 
-	if (!str) {
+const char numbers[] = "0123456789";
+const int arr_numbers[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-		return 0;
-
-	}
-
-	const char *end = str;
-
-	for (; *end != '\0'; ++end)
-	;
-
-	return end - str;
-
+unsigned int length(const char* str)
+{
+    if (str == nullptr)
+        return 0;
+    const char* end = str;
+    while(*end != '\0')
+        ++end;
+    return end - str;
 }
 
-const char *itos(int N){
-
-	if (!N)
-
-		return "0";
-
-	int m = N;
-
-	int digit = 0;
-
-	while (m){
-
-		digit++;
-
-		m /= 10;
-
-	}
-
-	char *arr;
-
-	char arr1[digit];
-
-	arr = (char *)malloc(digit);
-
-	int index = 0;
-
-	while (N){
-
-		arr1[++index] = N % 10 + '0';
-
-		N /= 10;
-
-	}
-
-	int i;
-
-	for (i = 0; i < index; i++) {
-
-		arr[i] = arr1[index - i];
-
-	}
-
-	arr[i] = '\0';
-
-	return (const char *)arr;
-
+int convert_to_int(const char* x)
+{
+    int res = 0;
+    for (int i = 0; i < length(x); i++)
+    {
+        for (int k = 0; k < 10; k++)
+        {
+            if (x[i] == numbers[k])
+            {
+                res = res * 10;
+                res = res + k;
+            }
+        }
+    }
+    return res;
 }
 
-const char *mul(const char *fst, const char *snd){
-
-	int fsti = 0, sndi = 0;
-
-	for (int i = 0, mult = 1; i != length(fst); ++i, mult *= 10)
-
-		fsti += (fst[i] - '0') * mult;
-
-	for (int i = 0, mult = 1; i != length(snd); ++i, mult *= 10)
-
-		sndi += (snd[i] - '0') * mult;
-
-	return itos((fsti * sndi));
-
+const char* convert_to_char(int x)
+{
+    int y = x;
+    int c = 1;
+    while ((y / 10) != 0)
+    {
+        y /= 10;
+        c++;
+    }
+    char* res = new char[c + 2];
+    y = x;
+    for (int i = c - 1; i > -1; i--)
+    {
+        for (int k = 0; k < 10; k++)
+        {
+            if ((x % 10) == arr_numbers[k])
+            {
+                res[i] = numbers[k];
+                break;
+            }
+        }
+        x /= 10;
+        res[c] = '\0';
+    }
+    return res;
 }
 
-int main(){
+const char* mul(const char* x, const char* y)
+{
+    return convert_to_char(convert_to_int(x) * convert_to_int(y));
+}
 
+int main()
+{
 	assert(strcmp(mul("6", "4"), "24") == 0);
-
 	assert(strcmp(mul("0", "0"), "0") == 0);
-
-	assert(strcmp(mul("42", "69"), "2898") == 0);
-
+	assert(strcmp(mul("20", "20"), "400") == 0);
 	return 0;
-
 }

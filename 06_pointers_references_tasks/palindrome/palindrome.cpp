@@ -1,60 +1,41 @@
 #include <iostream>
-#include <string.h>
-#include <cassert>
+#include<cassert>
+#include<cstring>
 
-bool ispalindrome(char man[]){
+using namespace std;
 
-    int n = strlen(man);
-
-    int fl = 1;
-
-    for (int i = 0; i < n; i++){
-
-        if (man[i] == man[n-1-i]){
-
-            fl = fl * 1;
-
-        }
-
-        else {
-
-
-            fl = fl * 0;
-
-        }
-
-    }
-
-    if (fl == 1){
-
-        std::cout << "True" << std::endl;
-
-        return true;
-
-    }
-
-    else {
-
-        std::cout << "False" << std::endl;
-
-        return false;
-
-    }
-
+unsigned int length(const char* str)
+{
+    if (str == nullptr)
+        return 0;
+    const char* end = str;
+    while(*end != '\0')
+        ++end;
+    return end - str;
 }
 
-int main(){
+bool palindrome_check(const char* s)
+{
+	int k = 0;
+	int n = length(s) - 1;
+	for (int i = 0, k = n; i <= k; i++, k--)
+	{
+		if (s[i] != s[k])
+			return false;
+	}
+	return true;
+}
 
-    char man[100];
-
-    assert(ispalindrome("tenet") == true);
-    
-    assert(ispalindrome("") == false);
-    
-    assert(ispalindrome("hello world") == false);
-    
-    assert(ispalindrome(nullptr) == false);
-    
-    return 0;
-
+int main()
+{
+    assert(palindrome_check("a") == true);
+	assert(palindrome_check("123321") == true);
+	assert(palindrome_check("ab") == false);
+	assert(palindrome_check("b") == true);
+	assert(palindrome_check("uehheu") == true);
+	assert(palindrome_check("super") == false);
+	assert(palindrome_check("repaper") == true);
+	assert(palindrome_check(nullptr) == true);
+	assert(palindrome_check(" ") == true);
+	return  0;
 }
