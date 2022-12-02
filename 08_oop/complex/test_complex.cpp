@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-#include "custom_complex.h"
+#include "custom_complex.cpp"
 
 TEST_CASE("sum of complex numbers")
 {
