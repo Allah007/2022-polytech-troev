@@ -1,4 +1,6 @@
 Без virtual:
+
+```
   Person::ctor
   Teacher::ctor
   Person::ctor
@@ -7,11 +9,14 @@
   Person::dtor
   Teacher::dtor
   Person::dtor
+```
 
 С virtual:
+```
   Person::ctor
   Teacher::ctor
   Student::ctor
   Student::dtor
   Teacher::dtor
   Person::dtor
+```
