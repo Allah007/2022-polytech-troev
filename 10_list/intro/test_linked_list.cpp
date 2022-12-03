@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "linked_list.h"
-#include "doctest.h"
+#include <doctest.h>
 
 TEST_CASE("Elements can be inserted") 
 {
@@ -36,8 +36,8 @@ TEST_CASE("Elements can be removed")
   REQUIRE(ll.size() == 5);
 }
 
-TEST_CASE("Deleting/pasting elements outside the array does nothing") {
-
+TEST_CASE("Deleting/pasting elements outside the array does nothing") 
+{
   LinkedList<int> ll{1, 2, 3, 4, 5};
 
   REQUIRE(ll.insert(99, 0) == false);
