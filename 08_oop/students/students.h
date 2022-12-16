@@ -13,12 +13,12 @@ struct Student
         return out;
     }
 
-    const bool operator==(const Student &s) const 
+    bool operator==(const Student &s) const 
     {
         return !(std::strcmp(name, s.name)) && score == s.score;
     }
 
-    const bool operator!=(const Student &s) const
+    bool operator!=(const Student &s) const
     { 
         return !(*this == s); 
     }
@@ -119,7 +119,7 @@ public:
         return out;
     }
 
-    const bool operator==(const StudentList &sl) const 
+    bool operator==(const StudentList &sl) const 
     {
         if (sl._size != _size)
             return false;
@@ -140,7 +140,6 @@ public:
         for (std::size_t i = 0; i < _size - 1; ++i)
             tmp[i] = _stud[i];
         tmp[_size - 1] = stud;
-        delete[] _stud;
         _stud = tmp;
         return *this;
     }
