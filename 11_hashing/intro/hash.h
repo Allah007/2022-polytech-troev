@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <string_view>
 
+
 #define A 94583
 #define B 41733
 #define C 19203
